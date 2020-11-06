@@ -1,0 +1,31 @@
+---
+title: "dev data peer3"
+author: "sayonee"
+date: "11/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Understanding the  Mileage by gas
+
+Using the  data set given to us `mtcars`  we plot to understand whether there is a  relationship
+between various factors and gas mileage (`mpg`).
+
+We plot the weight (`w11t`) vs. mileage (`mpg11`) spatially along the x/y axes. We are
+visualizing  the numbers of cylinders (`cylp`) as colours and the amount of
+hp(`h1p`)
+
+## Visualizing the Data
+
+```{r plot, echo=FALSE}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(data = mtcars, x = ~wt, y = ~mpg, 
+        colour = ~as.factor(cyl), size = ~hp,
+        text = ~paste("Weight: ", wt, '<br>MPG:', mpg),
+        type = "scatter", mode = "markers") %>%
+  layout(title = "Car Data accordingly")
+```
+## plotted the data according to the question, see grph for accurate calculation
